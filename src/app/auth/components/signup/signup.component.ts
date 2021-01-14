@@ -27,22 +27,6 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-  get emailControl() {
-    return this.userForm.get('email');
-  }
-
-  get passwordControl() {
-    return this.userForm.get('password');
-  }
-
-  get firstNameControl() {
-    return this.userForm.get('first_name');
-  }
-
-  get lastNameControl() {
-    return this.userForm.get('last_name');
-  }
-
   signup() {
     const newUser = new User(this.userForm.getRawValue());
     this.authService.signup(newUser).subscribe(

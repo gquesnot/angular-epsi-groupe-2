@@ -16,7 +16,9 @@ export class MatchService {
   get(): Observable<any> {
     return this.httpClient.post(
       `${environment.api}/api/user/matchs`,
-      {}
+      {
+        max: 100
+      }
     ).pipe(
       map( result => {
         // tslint:disable-next-line:no-string-literal

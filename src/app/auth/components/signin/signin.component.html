@@ -2,16 +2,7 @@
 
 <form [formGroup]="userForm" (ngSubmit)="signin()">
   <app-email-form-field [parentFormGroup]="userForm"></app-email-form-field>
-  <mat-form-field appearance="legacy">
-    <mat-label>Password</mat-label>
-    <input matInput placeholder="Password" type="password" formControlName="password">
-    <mat-error *ngIf="passwordControl.hasError('required')">
-      Le mot de passe est obligatoire
-    </mat-error>
-    <mat-error *ngIf="passwordControl.hasError('minlength') && !passwordControl.hasError('required')">
-      Le mot de passe doit faire plus de 6 caractères
-    </mat-error>
-  </mat-form-field>
+  <app-password-form-field [parentFormGroup]="userForm"></app-password-form-field>
   <button mat-raised-button color="accent" type="submit">Connexion</button>
 </form>
 

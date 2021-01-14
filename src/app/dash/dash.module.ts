@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 import { ProfileComponent } from './components/profile/profile.component';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import {UserPartsModule} from '../shared/user-parts/user-parts.module';
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    UserPartsModule,
   ]
 })
 export class DashModule { }

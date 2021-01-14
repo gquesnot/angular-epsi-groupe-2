@@ -53,4 +53,7 @@ export class ProfileComponent implements OnInit {
     this.profileService.updateChanges(userChanges).subscribe();
   }
 
+  compareIds(tagOption: TagInterface, tagSelect: TagInterface): boolean {
+    return tagOption && tagSelect && 'id' in tagOption && 'id' in tagSelect && tagOption.id === tagSelect.id;
+  }
 }

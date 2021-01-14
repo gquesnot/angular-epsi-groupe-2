@@ -2,25 +2,12 @@
 
 <form [formGroup]="userForm" (ngSubmit)="updateProfile()">
 
-  <mat-form-field appearance="legacy">
-    <mat-label>Prénom</mat-label>
-    <input matInput placeholder="Prénom" type="text" formControlName="first_name">
-    <mat-error *ngIf="firstNameControl.hasError('required')">
-      Le prénom est obligatoire
-    </mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="legacy">
-    <mat-label>Nom</mat-label>
-    <input matInput placeholder="Nom" type="text" formControlName="last_name">
-    <mat-error *ngIf="lastNameControl.hasError('required')">
-      Le nom est obligatoire
-    </mat-error>
-  </mat-form-field>
+  <app-firstname-form-field [parentFormGroup]="userForm"></app-firstname-form-field>
+  <app-lastname-form-field [parentFormGroup]="userForm"></app-lastname-form-field>
 
   <mat-form-field appearance="legacy">
     <mat-label>Domaine d'apprentissage</mat-label>
-    <mat-select formControlName="tags" multiple>
+    <mat-select [compareWith]="compareIds" formControlName="tags" multiple>
       <mat-option *ngFor="let tag of (tags$ | async)" [value]="tag">
         {{tag.name}}
       </mat-option>
