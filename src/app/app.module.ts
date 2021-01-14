@@ -8,6 +8,7 @@ import {CoreModule} from './core/core.module';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ApiInterceptor} from './core/api.interceptor';
 import {MatButtonModule, MatIconModule, MatMenuModule} from '@angular/material';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {MatButtonModule, MatIconModule, MatMenuModule} from '@angular/material';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    MatSnackBarModule,
   ],
   providers: [
     {

@@ -4,6 +4,7 @@ import {AuthService} from '../../../core/services/auth.service';
 import {User} from '../../../core/entities/user';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',

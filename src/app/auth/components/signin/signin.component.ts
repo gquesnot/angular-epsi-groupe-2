@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {AuthService} from '../../../core/services/auth.service';
 import {Router} from '@angular/router';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signin',
@@ -15,6 +20,7 @@ export class SigninComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
+    private snackBar: MatSnackBar,
   ) {
   }
 
@@ -52,6 +58,11 @@ export class SigninComponent implements OnInit {
       (err) => {
         // on peut dire à l'utilisateur qu'il n'a pas donné les bons identifiants
         console.log({ err });
+        this.snackBar.open('bad credentials', 'close', {
+          duration: 500,
+          horizontalPosition: 'right',
+          verticalPosition: 'bottom'
+        });
       });
   }
 
